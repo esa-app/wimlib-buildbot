@@ -2,15 +2,15 @@ language: c
 matrix:
   include:
     - osx_image: xcode12u
-      env: OSFLAG="catalina"
+      env: OSFLAG="macos_catalina_amd64"
     - osx_image: xcode11.3
-      env: OSFLAG="mojave"
+      env: OSFLAG="macos_mojave_amd64"
     - osx_image: xcode10.1
-      env: OSFLAG="high_sierra"
+      env: OSFLAG="macos_high_sierra_amd64"
     - osx_image: xcode9.2
-      env: OSFLAG="sierra"
+      env: OSFLAG="macos_sierra_amd64"
     - osx_image: xcode8
-      env: OSFLAG="el_capitan"
+      env: OSFLAG="macos_el_capitan_amd64"
     - os: linux
       arch: amd64
       env: OSFLAG="linux_amd64"
@@ -21,7 +21,7 @@ script:
   - make all -j
   - ./wimlib-imagex --version
   - export BIN_VERSION=$(./wimlib-imagex --version | sed 's/[^0-9.]*\([0-9.]*\).*/\1/' | head -1)
-  - export BIN_NAME=wimlib-imagex-$BIN_VERSION-macos-$OSFLAG
+  - export BIN_NAME=wimlib-imagex-$BIN_VERSION-$OSFLAG
   - mv ./wimlib-imagex ./$BIN_NAME
 deploy:
   provider: releases
