@@ -1,5 +1,5 @@
 language: c
-jobs:
+matrix:
   include:
   - osx_image: xcode12u
   - osx_image: xcode11.3
