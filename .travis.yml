@@ -7,9 +7,11 @@ jobs:
   - osx_image: xcode9.2
   - osx_image: xcode8
 script:
-  - autoreconf -f -i -v
-  - ./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared
-  - make all -j
+- autoreconf -f -i -v
+- "./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug
+  --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared"
+- make all -j
+- wimlib-imagex
 deploy:
   provider: releases
   api_key:
