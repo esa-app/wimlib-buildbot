@@ -1,12 +1,18 @@
 language: c
-os: osx
+jobs:
+  include:
+  - osx_image: xcode12u
+  - osx_image: xcode11.3
+  - osx_image: xcode10.1
+  - osx_image: xcode9.2
+  - osx_image: xcode8
 script:
   - ./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared
   - make all -j
 deploy:
   provider: releases
   api_key:
-    secure: $API_KEY
+    secure: "${API_KEY}"
   file: wimlib-imagex
   on:
     repo: esa-app/wimlib-buildbot
