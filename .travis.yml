@@ -1,28 +1,28 @@
 language: c
 matrix:
   include:
-  - osx_image: xcode12u
-    env: OSFLAG="catalina"
-  - osx_image: xcode11.3
-    env: OSFLAG="mojave"
-  - osx_image: xcode10.1
-    env: OSFLAG="high_sierra"
-  - osx_image: xcode9.2
-    env: OSFLAG="sierra"
-  - osx_image: xcode8
-    env: OSFLAG="el_capitan"
-  - os: linux
-    arch: amd64
-    env: OSFLAG="linux_amd64"
+    - osx_image: xcode12u
+      env: OSFLAG="catalina"
+    - osx_image: xcode11.3
+      env: OSFLAG="mojave"
+    - osx_image: xcode10.1
+      env: OSFLAG="high_sierra"
+    - osx_image: xcode9.2
+      env: OSFLAG="sierra"
+    - osx_image: xcode8
+      env: OSFLAG="el_capitan"
+    - os: linux
+      arch: amd64
+      env: OSFLAG="linux_amd64"
 script:
-- autoreconf -f -i -v
-- "./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug
-  --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared"
-- make all -j
-- ./wimlib-imagex --version
-- export BIN_VERSION=$(./wimlib-imagex --version | sed 's/[^0-9.]*\([0-9.]*\).*/\1/' | head -1)
-- export BIN_NAME=wimlib-imagex-$BIN_VERSION-macos-$OSFLAG
-- mv ./wimlib-imagex ./$BIN_NAME
+  - autoreconf -f -i -v
+  - "./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug
+    --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared"
+  - make all -j
+  - ./wimlib-imagex --version
+  - export BIN_VERSION=$(./wimlib-imagex --version | sed 's/[^0-9.]*\([0-9.]*\).*/\1/' | head -1)
+  - export BIN_NAME=wimlib-imagex-$BIN_VERSION-macos-$OSFLAG
+  - mv ./wimlib-imagex ./$BIN_NAME
 deploy:
   provider: releases
   api_key:
@@ -31,4 +31,5 @@ deploy:
   on:
     repo: esa-app/wimlib-buildbot
     all_branches: true
-  skip_cleanup: 'true'
+    tags: true
+  skip_cleanup: "true"
