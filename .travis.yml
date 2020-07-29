@@ -1,0 +1,13 @@
+language: c
+os: osx
+script:
+  - ./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared
+  - make all -j
+deploy:
+  provider: releases
+  api_key:
+    secure: $API_KEY
+  file: wimlib-imagex
+  on:
+    repo: esa-app/wimlib-buildbot
+  skip_cleanup: 'true'
