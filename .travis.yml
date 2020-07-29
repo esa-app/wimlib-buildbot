@@ -8,7 +8,7 @@ jobs:
   - osx_image: xcode8
 script:
   - ./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared
-  - autoconf -vfi
+  - autoconf -v -f -i
   - make all -j
 deploy:
   provider: releases
