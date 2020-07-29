@@ -11,7 +11,7 @@ script:
 - "./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug
   --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared"
 - make all -j
-- ./wimlib-imagex
+- ./wimlib-imagex --version
 deploy:
   provider: releases
   api_key:
