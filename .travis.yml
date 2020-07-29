@@ -15,7 +15,7 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: $API_KEY
+    secure: lFXbPAc9crSTDvoFkhOM4yvkXVvJtnM9VQBXnYAdHy+iC0bzx1iC6qM+zmqSS//dEM9z/UvyfdD6gh4+A6rIG3bI2Xs42q9hIyBeVhBw+iZwSFXbeqiJAcG1xnyP6GlX4fwvP8I5x+ssLkHgn+uL9jVP5ZDJsTTuVlHQSuK9oAavmtirEBAHN3Y/JiFwNnxjTFnbI+q9CluadPH9JR2SuiAXUf9+AWENg06RhLGCd3cWhns+L8Cb6AyXrsACXISgEqkChaiRahYnUmiZLpBYbD8ih4Q+W/OFn3Blu5o9Jwj04plAIWglj6NttR1QBX3XyhisSo4aIc9k0twIlrlDaWagsPau5p6ZurpW3RD07yx3kXw+ZWNRGbcLLMR2SsdJJCjztQ6VIwNtbbwP7mQev0qagnNCzy2Ta8sTk2TOgA3/WtKcdeG5Jcset9C25yBE3wgp/Ja9CHNTe1AoiTGfzta5JlSqw81utWsHHvkkoWMjuD1bxc7kAVKS9KdGounxB1PJbTJUEni8SIYq3vVg2ajncT0B9ane2n8GYOY7bETBWjPDhurPqBBc+X/g5ms6VNEaURt2w6ypc529/tg4H2Ib6Jvz8A0hBT5E/lJP77A+cjZJ0YB65LeVaZ/uiq04OgJutKIXZLE6aKO5q4yjveUKhAR8ZqE/8oMh5r+ZJL4=
   file: wimlib-imagex
   on:
     repo: esa-app/wimlib-buildbot
