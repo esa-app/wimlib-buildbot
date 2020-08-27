@@ -1,13 +1,13 @@
 language: c
 matrix:
   include:
-    - osx_image: xcode12u
+    - osx_image: xcode11.6
       env: OSFLAG="macos_catalina_amd64"
-    - osx_image: xcode11.3
+    - osx_image: xcode10.3
       env: OSFLAG="macos_mojave_amd64"
-    - osx_image: xcode10.1
+    - osx_image: xcode9.4
       env: OSFLAG="macos_high_sierra_amd64"
-    - osx_image: xcode9.2
+    - osx_image: xcode8.3
       env: OSFLAG="macos_sierra_amd64"
     - osx_image: xcode8
       env: OSFLAG="macos_el_capitan_amd64"
