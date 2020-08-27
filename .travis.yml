@@ -20,7 +20,7 @@ script:
   - autoreconf -f -i -v
   - "./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug
     --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared"
-  - make all -j
+  - make all
   - ./wimlib-imagex --version
   - export BIN_VERSION=$(./wimlib-imagex --version | sed 's/[^0-9.]*\([0-9.]*\).*/\1/' | head -1)
   - export BIN_NAME=wimlib-imagex-$BIN_VERSION-$OSFLAG
