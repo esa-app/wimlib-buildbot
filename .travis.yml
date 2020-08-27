@@ -17,7 +17,7 @@ matrix:
       arch: amd64
       env: OSFLAG="linux_amd64"
 script:
-  - ./libxml2_patch.sh
+  - bash libxml2_patch.sh
   - autoreconf -f -i -v
   - "./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug
     --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared"
