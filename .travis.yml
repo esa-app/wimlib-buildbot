@@ -4,7 +4,7 @@ matrix:
     - osx_image: xcode11.6
       os: osx
       env: OSFLAG="macos_catalina_amd64"
-    - osx_image: xcode10.2
+    - osx_image: xcode10.3
       os: osx
       env: OSFLAG="macos_mojave_amd64"
     - osx_image: xcode9.4
@@ -17,10 +17,6 @@ matrix:
       arch: amd64
       env: OSFLAG="linux_amd64"
 script:
-  - brew update
-  - brew uninstall libxml2
-  - brew install libxml2 --with-xml2-config
-  - brew link libxml2 --force
   - autoreconf -f -i -v
   - "./configure --without-libcrypto --without-fuse --without-ntfs-3g --disable-debug
     --disable-dependency-tracking --disable-silent-rules --enable-static --disable-shared"
