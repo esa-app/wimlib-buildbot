@@ -4,7 +4,7 @@ matrix:
     - osx_image: xcode11.6
       os: osx
       env: OSFLAG="macos_catalina_amd64"
-    - osx_image: xcode10.3
+    - osx_image: xcode10.2
       os: osx
       env: OSFLAG="macos_mojave_amd64"
     - osx_image: xcode9.4
@@ -13,9 +13,6 @@ matrix:
     - osx_image: xcode8.3
       os: osx
       env: OSFLAG="macos_sierra_amd64"
-    - osx_image: xcode8
-      os: osx
-      env: OSFLAG="macos_el_capitan_amd64"
     - os: linux
       arch: amd64
       env: OSFLAG="linux_amd64"
